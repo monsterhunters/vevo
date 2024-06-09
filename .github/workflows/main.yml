@@ -24,6 +24,9 @@ jobs:
     - name: Install dependencies
       run: pip install requests google-auth google-auth-oauthlib google-auth-httplib2
 
+    - name: Download ping_colab.py
+      run: curl -o ping_colab.py https://raw.githubusercontent.com/monsterhunters/vevo/main/ping_colab.py
+
     - name: Run ping script
       env:
         GOOGLE_OAUTH2_CREDENTIALS: ${{ secrets.GOOGLE_OAUTH2_CREDENTIALS }}
