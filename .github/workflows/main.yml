@@ -1,0 +1,27 @@
+name: Keep Colab Alive
+
+on:
+  schedule:
+    # Schedule the workflow to run every 25 minutes
+    - cron: '*/25 * * * *'
+
+jobs:
+  ping-colab:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install requests google-auth google-auth-oauthlib google-auth-httplib2
+
+    - name: Run ping script
+      env:
+        GOOGLE_OAUTH2_CREDENTIALS: ${{ secrets.GOOGLE_OAUTH2_CREDENTIALS }}
+      run: python ping_colab.py
