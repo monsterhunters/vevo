@@ -31,7 +31,7 @@ def ping_colab(notebook_url, access_token):
         print(f"Failed to ping the Colab notebook. Status code: {response.status_code}")
 
 if __name__ == "__main__":
-    notebook_url = "YOUR_COLAB_NOTEBOOK_URL"
+    notebook_url = "https://colab.research.google.com/github/monsterhunters/Lora-Training-GUI/blob/main/Lora_Training_GUI_V2_2414.ipynb"
 
     # Save the credentials file from GitHub Secrets
     with open('credentials.json', 'w') as f:
