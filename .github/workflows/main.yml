@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 * * * *' # Runs every hour; adjust as needed
+   # - cron: '0 * * * *' # Runs every hour; adjust as needed
 
 jobs:
   ping_colab:
